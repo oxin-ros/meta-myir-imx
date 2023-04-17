@@ -74,8 +74,8 @@ do_install_append () {
     install -m 0644 ${WORKDIR}/imx-firmware/nxp/FwImage_8987/txpwrlimit_cfg_8987.conf  ${D}${nonarch_base_libdir}/firmware/nxp
 
 
-		# Install AP6212.txt to imx8mp
-		install -m 0644 ${WORKDIR}/linux-firmware-20200817/brcm/brcmfmac43430-sdio.AP6212.txt  ${D}${nonarch_base_libdir}/firmware/brcm/brcmfmac43430-sdio.fsl,imx8mp-evk.txt
+    # Install AP6212.txt to imx8mp
+    install -m 0644 ${WORKDIR}/linux-firmware-20210208/brcm/brcmfmac43430-sdio.AP6212.txt  ${D}${nonarch_base_libdir}/firmware/brcm/brcmfmac43430-sdio.fsl,imx8mp-evk.txt
     install -d ${D}${nonarch_base_libdir}/firmware/bcmd/
     # Install AP6212 firmware
     install -m 0644 ${WORKDIR}/myir-firmware/brcm/AP6212/fw_bcm43438a1_apsta.bin ${D}${nonarch_base_libdir}/firmware/bcmd
