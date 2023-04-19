@@ -160,6 +160,8 @@ echo "PACKAGE_CLASSES = \"package_deb\"" >> conf/local.conf
 echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 echo "# Add WireGuard tools to the image" >> conf/local.conf
 echo "IMAGE_INSTALL += \"wireguard-tools\"" >> conf/local.conf
+echo "# Add additional tools to the image" >> conf/local.conf
+echo "IMAGE_INSTALL += \"coreutils net-tools vim\"" >> conf/local.conf
 
 
 if [ ! -e $BUILD_DIR/conf/bblayers.conf.org ]; then
