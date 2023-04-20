@@ -159,7 +159,7 @@ echo "# Switch to Debian packaging and include package-management in the image" 
 echo "PACKAGE_CLASSES = \"package_deb\"" >> conf/local.conf
 echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 echo "# Add WireGuard tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"wireguard-tools\"" >> conf/local.conf
+echo "IMAGE_INSTALL += \"iproute2 wireguard-tools\"" >> conf/local.conf
 echo "# Add additional tools to the image" >> conf/local.conf
 echo "IMAGE_INSTALL += \"coreutils net-tools vim less sed find\"" >> conf/local.conf
 # https://docs.yoctoproject.org/dev/dev-manual/bmaptool.html
