@@ -161,7 +161,7 @@ echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 echo "# Add WireGuard tools to the image" >> conf/local.conf
 echo "IMAGE_INSTALL += \"iproute2 wireguard-tools\"" >> conf/local.conf
 echo "# Add additional tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"coreutils net-tools vim less sed findutils iputils gzip grep gawk wget\"" >> conf/local.conf
+echo "IMAGE_INSTALL += \"coreutils net-tools vim less sed findutils iputils gzip grep gawk wget diffutils\"" >> conf/local.conf
 # https://docs.yoctoproject.org/dev/dev-manual/bmaptool.html
 echo "# Build bmap for flashing image to device" >> conf/local.conf
 echo "IMAGE_FSTYPES += \"wic wic.bmap\"" >> conf/local.conf
