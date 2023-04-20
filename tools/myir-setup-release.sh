@@ -159,9 +159,9 @@ echo "# Switch to Debian packaging and include package-management in the image" 
 echo "PACKAGE_CLASSES = \"package_deb\"" >> conf/local.conf
 echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 echo "# Add WireGuard tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"iproute2 wireguard-tools\"" >> conf/local.conf
+echo "IMAGE_INSTALL += \"iproute2 iproute2-bash-completion kernel-module-wireguard wireguard-tools wireguard-tools-bash-completion kernel-devsrc wireguard-module\"" >> conf/local.conf
 echo "# Add additional tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"coreutils net-tools vim less sed findutils iputils gzip grep gawk wget diffutils\"" >> conf/local.conf
+echo "IMAGE_INSTALL += \"ca-certificates coreutils net-tools vim less sed findutils iputils gzip grep gawk wget diffutils os-release\"" >> conf/local.conf
 # https://docs.yoctoproject.org/dev/dev-manual/bmaptool.html
 echo "# Build bmap for flashing image to device" >> conf/local.conf
 echo "IMAGE_FSTYPES += \"wic wic.bmap\"" >> conf/local.conf
@@ -200,6 +200,8 @@ echo "BBLAYERS += \"\${BSPDIR}/sources/meta-qt5\"" >> $BUILD_DIR/conf/bblayers.c
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-python2\"" >> $BUILD_DIR/conf/bblayers.conf
 # Add the basestation.
 echo "BBLAYERS += \"\${BSPDIR}/sources/meta-basestation\"" >> $BUILD_DIR/conf/bblayers.conf
+# Add a compatibility layer for wireguard.
+echo "BBLAYERS += \"\${BSPDIR}/sources/meta-wireguard-compat\"" >> $BUILD_DIR/conf/bblayers.conf
 
 if [ -d ../sources/meta-ivi ]; then
     echo -e "\n## Genivi layers" >> $BUILD_DIR/conf/bblayers.conf
