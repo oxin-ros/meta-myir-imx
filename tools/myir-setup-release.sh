@@ -161,10 +161,15 @@ echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 echo "# Add WireGuard tools to the image" >> conf/local.conf
 echo "IMAGE_INSTALL += \"wireguard-tools\"" >> conf/local.conf
 echo "# Add additional tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"coreutils net-tools vim\"" >> conf/local.conf
+echo "IMAGE_INSTALL += \"coreutils net-tools vim less\"" >> conf/local.conf
 # https://docs.yoctoproject.org/dev/dev-manual/bmaptool.html
 echo "# Build bmap for flashing image to device" >> conf/local.conf
 echo "IMAGE_FSTYPES += \"wic wic.bmap\"" >> conf/local.conf
+# https://www.yoctoproject.org/pipermail/yocto/2017-February/034705.html
+echo "# Install gnupg to allow apt-get to work." >> conf/local.conf
+echo "IMAGE_INSTALL += \"gnupg\"" >> conf/local.conf
+echo "# Add python dependences for the base station." >> conf/local.conf
+echo "IMAGE_INSTALL += \"python3-datetime python3-pyrtcm python3-pyserial python3-requests python3-threading python3-pygnssutils\"" >> conf/local.conf
 
 
 if [ ! -e $BUILD_DIR/conf/bblayers.conf.org ]; then
