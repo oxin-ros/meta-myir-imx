@@ -159,7 +159,10 @@ echo "# Switch to Debian packaging and include package-management in the image" 
 echo "PACKAGE_CLASSES = \"package_deb\"" >> conf/local.conf
 echo "EXTRA_IMAGE_FEATURES += \"package-management\"" >> conf/local.conf
 echo "# Add WireGuard tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"iproute2 iproute2-bash-completion kernel-module-wireguard wireguard-tools wireguard-tools-bash-completion kernel-devsrc wireguard-module\"" >> conf/local.conf
+#TODO: Investigate these packages:
+# - kernel-module-wireguard
+# - wireguard-module
+echo "IMAGE_INSTALL += \"iproute2 iproute2-bash-completion wireguard-tools wireguard-tools-bash-completion kernel-devsrc\"" >> conf/local.conf
 echo "# Add additional tools to the image" >> conf/local.conf
 echo "IMAGE_INSTALL += \"ca-certificates coreutils net-tools vim less sed findutils iputils gzip grep gawk wget diffutils os-release\"" >> conf/local.conf
 # https://docs.yoctoproject.org/dev/dev-manual/bmaptool.html
