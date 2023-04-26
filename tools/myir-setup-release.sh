@@ -165,7 +165,7 @@ echo "# Add WireGuard tools to the image" >> conf/local.conf
 # - kernel-devsrc
 echo "IMAGE_INSTALL += \"iptables iproute2 iproute2-bash-completion wireguard-tools wireguard-tools-bash-completion linux-imx-headers\"" >> conf/local.conf
 echo "# Add additional tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"ca-certificates coreutils net-tools vim less sed findutils iputils gzip grep gawk wget diffutils os-release openssh\"" >> conf/local.conf
+echo "IMAGE_INSTALL += \"packagegroup-core-full-cmdline ca-certificates nano vim wget os-release openssh\"" >> conf/local.conf
 # https://www.yoctoproject.org/pipermail/yocto/2017-February/034705.html
 echo "# Install gnupg to allow apt-get to work." >> conf/local.conf
 echo "IMAGE_INSTALL += \"gnupg\"" >> conf/local.conf
