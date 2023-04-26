@@ -7,7 +7,7 @@ New headers are installed in ${includedir}/imx."
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
-SRCBRANCH = "lf-5.10.y"
+SRCBRANCH = "develop_lf-5.10.y"
 LOCALVERSION = "-1.0.0"
 KERNEL_SRC ?= "git://github.com/MYiR-Dev/myir-imx-linux.git;protocol=https"
 # KERNEL_SRC ?= "git://github.com/nxp-imx/linux-imx.git;protocol=https"
