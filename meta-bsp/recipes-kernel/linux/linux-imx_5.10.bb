@@ -15,11 +15,11 @@ DEPENDS += "lzop-native bc-native"
 SRCBRANCH = "develop_lf-5.10.y"
 LOCALVERSION = "-1.0.0"
 KERNEL_SRC ?= "git://github.com/MYiR-Dev/myir-imx-linux.git;protocol=https"
-#KERNEL_SRC ?= "git:///media/liao/Linux_5.10.9/myir-imx-linux;protocol=file"
+
 
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH}"
 
-SRCREV = "e05e818b70c90a46070127d7ab19ee8beb40ee48"
+SRCREV = "01da9a3a13a2cf396d726c77108140fb63a64f8f"
 
 
 #KERNEL_BRANCH ?= "6ull-kernel5.10.9"
