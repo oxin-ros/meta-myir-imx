@@ -162,17 +162,20 @@ echo "# Add WireGuard tools to the image" >> conf/local.conf
 #TODO: Investigate these packages:
 # - kernel-module-wireguard
 # - wireguard-module
-echo "IMAGE_INSTALL += \"iproute2 iproute2-bash-completion wireguard-tools wireguard-tools-bash-completion kernel-devsrc\"" >> conf/local.conf
+# - kernel-devsrc
+echo "IMAGE_INSTALL += \"iptables iproute2 iproute2-bash-completion wireguard-tools wireguard-tools-bash-completion linux-imx-headers\"" >> conf/local.conf
 echo "# Add additional tools to the image" >> conf/local.conf
-echo "IMAGE_INSTALL += \"ca-certificates coreutils net-tools vim less sed findutils iputils gzip grep gawk wget diffutils os-release\"" >> conf/local.conf
-# https://docs.yoctoproject.org/dev/dev-manual/bmaptool.html
-echo "# Build bmap for flashing image to device" >> conf/local.conf
-echo "IMAGE_FSTYPES += \"wic wic.bmap\"" >> conf/local.conf
+echo "IMAGE_INSTALL += \"ca-certificates coreutils net-tools vim less sed findutils iputils gzip grep gawk wget diffutils os-release openssh\"" >> conf/local.conf
 # https://www.yoctoproject.org/pipermail/yocto/2017-February/034705.html
 echo "# Install gnupg to allow apt-get to work." >> conf/local.conf
 echo "IMAGE_INSTALL += \"gnupg\"" >> conf/local.conf
 echo "# Add python dependences for the base station." >> conf/local.conf
 echo "IMAGE_INSTALL += \"python3-datetime python3-pyrtcm python3-pyserial python3-requests python3-threading python3-pygnssutils\"" >> conf/local.conf
+
+
+# https://docs.yoctoproject.org/dev/dev-manual/bmaptool.html
+echo "# Build bmap for flashing image to device" >> conf/local.conf
+echo "IMAGE_FSTYPES += \"tar.bz2 wic wic.bmap\"" >> conf/local.conf
 
 
 if [ ! -e $BUILD_DIR/conf/bblayers.conf.org ]; then
