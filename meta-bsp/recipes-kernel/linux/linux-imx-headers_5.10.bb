@@ -13,7 +13,7 @@ KERNEL_SRC ?= "git://github.com/MYiR-Dev/myir-imx-linux.git;protocol=https"
 # KERNEL_SRC ?= "git://github.com/nxp-imx/linux-imx.git;protocol=https"
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH}"
 
-SRCREV = "32513c25d8c7867f07b44900368346795357b48e"
+SRCREV = "01da9a3a13a2cf396d726c77108140fb63a64f8f"
 
 S = "${WORKDIR}/git"
 
